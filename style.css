@@ -5,7 +5,8 @@
     box-sizing: border-box;
 }
 
-/* Set background and font for the whole page */
+/* Styling form and resume sections */
+
 body {
     font-family: 'times new roman', sans-serif;
     background: linear-gradient(135deg, #ece9e6, #ffffff);
@@ -19,7 +20,6 @@ body {
     transition: background 0.4s ease;
 }
 
-/* Style the form */
 form {
     background: #ffffff;
     padding: 30px;
@@ -33,6 +33,27 @@ form {
     overflow: hidden;
 }
 
+h1 {
+    border-bottom: 3px solid #6d0057;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #6d0057;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+h2 {
+    border-bottom: 3px solid #6d0057;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #6d0057;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
 form::before {
     content: "";
     position: absolute;
@@ -40,7 +61,7 @@ form::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #74ebd5, #9face6);
+    background: linear-gradient(135deg, #f0bafa, #ec98f5);
     z-index: -1;
     transition: opacity 0.3s ease;
     opacity: 0;
@@ -55,31 +76,13 @@ form:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Style the headings */
-h1 {
-    border-bottom: 3px solid #6d0057;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: #6d0057;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
 
-/* Style the headings */
-h2 {
-    border-bottom: 3px solid #6d0057;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    color: #6d0057;
+legend {
+    font-weight: bold;
     text-align: left;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    color: rgb(34, 29, 29);
 }
 
-/* Style the labels and inputs */
 label {
     display: block;
     margin-bottom: 10px;
@@ -96,7 +99,9 @@ input[type="text"], input[type="email"] {
     font-size: 16px;
     color: #333;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-color: #fa95e6;
+    outline: none;
+    box-shadow: 0 4px 8px #650151;
 }
 
 input[type="text"]:focus, input[type="email"]:focus {
@@ -105,7 +110,38 @@ input[type="text"]:focus, input[type="email"]:focus {
     box-shadow: 0 4px 8px #6d0057;
 }
 
-/* Add styles for the submit button */
+input[type="number"], input[type="phone"] {
+    width: calc(100% - 22px);
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    border-color: #fa95e6;
+    outline: none;
+    box-shadow: 0 4px 8px #650151;
+}
+input[type="number"]:focus, input[type="number"]:focus {
+    border-color: #6d0057;
+    outline: none;
+    box-shadow: 0 4px 8px #6d0057;
+}
+textarea{
+    width: calc(100% - 22px);
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    border-color: #fa95e6;
+    outline: none;
+    box-shadow: 0 4px 8px #650151;
+}
 button {
     background: linear-gradient(135deg, #6d0057, #6d0057);
     color: #fff;
@@ -119,19 +155,18 @@ button {
     box-shadow: 0 5px 15px #6d0057;
 }
 
-button:hover {
+button :hover {
     background: linear-gradient(135deg, #6d0057, #6d0057);
     transform: translateY(-3px);
     box-shadow: 0 8px 20px #6d0057;
 }
 
-/* Style the resume display section */
-#resumeDisplay {
+#resume-display {
     margin-top: 20px;
     padding: 30px;
     border: 1px solid #ddd;
     border-radius: 15px;
-    background: #fff;
+    background: #fcf3fa;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     max-width: 600px;
     width: 100%;
@@ -139,6 +174,7 @@ button:hover {
     position: relative;
     overflow: hidden;
     outline: none;
+    line-height: 35px;
 }
 
 #resumeDisplay::before {
@@ -148,7 +184,7 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #f093fb, #f5576c);
+    background: linear-gradient(135deg, #f093fb, #f557eb);
     z-index: -1;
     transition: opacity 0.3s ease;
     opacity: 0;
@@ -163,21 +199,17 @@ button:hover {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-#resumeDisplay h3 {
+#resume-display h2 {
     margin-top: 0;
     color: #6d0057;
     border-bottom: 3px solid #6d0057;
     padding-bottom: 5px;
     font-size: 24px;
+    text-align: center;
     font-weight: 700;
     text-transform: uppercase;
 }
 
-#resumeDisplay p {
-    margin: 10px 0;
-    line-height: 1.6;
-    color: #555;
-}
 
 #resumeDisplay .section {
     margin-bottom: 20px;
@@ -193,181 +225,19 @@ button:hover {
     color: #555;
 }
 
-#resumeDisplay .section .value span {
-    display: block;
-    margin-top: 5px;
-    font-size: 16px;
-    color: #666;
-}
-
-#resumeDisplay .section .value .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-#resumeDisplay .section .value .skills span {
-    background-color: #6d0057;
-    color: #fff;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-size: 14px;
-}
-
-#resumeDisplay .section .value .about {
-    font-style: italic;
-    color: #444;
-}
-
-/* //for responsiveness// */
-/* Base styles for mobile devices (small screens) */
-@media (max-width: 600px) {
-    body {
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    form {
-        padding: 20px;
-        width: 100%;
-    }
-
-    input[type="text"], input[type="email"] {
-        width: 100%;
-        padding: 10px;
-    }
-
-    button {
-        width: 100%;
-        padding: 12px;
-        font-size: 16px;
-    }
-
-    #resumeDisplay {
-        padding: 20px;
-        font-size: 14px;
-    }
-
-    #resumeDisplay h3 {
-        font-size: 20px;
-    }
-
-    #resumeDisplay .section {
-        margin-bottom: 15px;
-    }
-
-    #resumeDisplay .section .value {
-        font-size: 14px;
-    }
-
-    #resumeDisplay .section .value .skills span {
-        font-size: 12px;
-        padding: 4px 8px;
-    }
-
-    #resumeDisplay .section .value .about {
-        font-size: 14px;
-    }
-}
-
-/* Adjustments for tablets (medium screens) */
-@media (min-width: 601px) and (max-width: 1024px) {
-    body {
-        padding: 20px;
-        font-size: 16px;
-    }
-
-    form {
-        padding: 25px;
-        width: 90%;
-        max-width: 700px;
-    }
-
-    input[type="text"], input[type="email"] {
-        width: 100%;
-        padding: 10px;
-    }
-
-    button {
-        width: 100%;
-        padding: 15px;
-        font-size: 18px;
-    }
-
-    #resumeDisplay {
-        padding: 25px;
-        font-size: 16px;
-    }
-
-    #resumeDisplay h3 {
-        font-size: 22px;
-    }
-
-    #resumeDisplay .section {
-        margin-bottom: 20px;
-    }
-
-    #resumeDisplay .section .value {
-        font-size: 16px;
-    }
-
-    #resumeDisplay .section .value .skills span {
-        font-size: 14px;
-        padding: 5px 10px;
-    }
-
-    #resumeDisplay .section .value .about {
-        font-size: 16px;
-    }
-}
-
-/* Adjustments for desktops (large screens) */
-@media (min-width: 1025px) {
-    body {
+#shareable-link-container{
+        margin-top: 20px;
         padding: 30px;
-        font-size: 18px;
-    }
-
-    form {
-        padding: 30px;
-        width: 60%;
-        max-width: 800px;
-    }
-
-    input[type="text"], input[type="email"] {
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        background: #fcf3fa;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
         width: 100%;
-        padding: 12px;
-    }
-
-    button {
-        width: 100%;
-        padding: 18px;
-        font-size: 20px;
-    }
-
-    #resumeDisplay {
-        padding: 30px;
-        font-size: 18px;
-    }
-
-    #resumeDisplay h3 {
-        font-size: 24px;
-    }
-
-    #resumeDisplay .section {
-        margin-bottom: 25px;
-    }
-
-    #resumeDisplay .section .value {
-        font-size: 18px;
-    }
-
-    #resumeDisplay .section .value .skills span {
-        font-size: 16px;
-        padding: 6px 12px;
-    }
-
-    #resumeDisplay .section .value .about {
-        font-size: 18px;
-    }
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        outline: none;
+        line-height: 35px;
+        
 }
