@@ -61,8 +61,22 @@ form.addEventListener('submit', (event: Event) => {
 
 // Handle PDF download
 downloadPdfButton.addEventListener('click', () => {
-    window.print(); // This will open the print dialog and allow the user to save as PDF
+    const resumeContent = document.getElementById('resume-display').innerHTML; // Get the resume HTML content
+    const originalContent = document.body.innerHTML; // Store the original page content
+
+    // Replace the body content with only the resume content
+    document.body.innerHTML = resumeContent;
+
+    // Trigger the print dialog
+    window.print();
+
+    // Restore the original page content after printing
+    document.body.innerHTML = originalContent;
+
+    // Reattach the scripts and event listeners (if needed)
+    window.location.reload(); // Reload the page to restore functionality
 });
+
 
 // Prefill the form based on the username in the URL
 window.addEventListener('DOMContentLoaded', () => {
